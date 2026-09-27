@@ -46,7 +46,7 @@ export default function Home() {
   const hasConversation = messages.length > 0;
 
   return (
-    <div className="flex h-screen w-full gap-2 overflow-hidden p-2 sm:p-3">
+    <div className="flex h-screen w-screen gap-2 overflow-hidden p-2 sm:p-3 box-border">
       <Sidebar 
         isOpen={isSidebarOpen} 
         onClose={() => setIsSidebarOpen(false)} 
@@ -54,13 +54,13 @@ export default function Home() {
         onToggleCollapse={setIsSidebarCollapsed}
       />
 
-      <main className="relative flex flex-1 flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-line bg-gradient-to-b from-sky-soft via-white to-coral-soft/40 shadow-card">
+      <main className="relative flex flex-1 flex-col h-full min-h-0 overflow-hidden rounded-2xl sm:rounded-3xl border border-line bg-gradient-to-b from-sky-soft via-white to-coral-soft/40 shadow-card">
         <TopBar 
           onOpenSidebar={() => setIsSidebarOpen(true)} 
           isSidebarCollapsed={isSidebarCollapsed}
         />
 
-        <div className={`flex-1 flex flex-col justify-center ${hasConversation ? "overflow-y-auto" : "overflow-hidden"}`}>
+        <div className={`flex-1 min-h-0 flex flex-col ${hasConversation ? "overflow-y-auto" : "justify-center overflow-hidden"}`}>
           {hasConversation ? (
             <ChatThread messages={messages} isTyping={isTyping} />
           ) : (
