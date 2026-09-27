@@ -46,7 +46,7 @@ export default function Home() {
   const hasConversation = messages.length > 0;
 
   return (
-    <div className="flex h-screen w-screen gap-2 overflow-hidden p-2 sm:p-3 box-border">
+    <div className="flex h-dvh w-screen gap-2 overflow-hidden p-2 sm:p-3 box-border">
       <Sidebar 
         isOpen={isSidebarOpen} 
         onClose={() => setIsSidebarOpen(false)} 
@@ -60,7 +60,7 @@ export default function Home() {
           isSidebarCollapsed={isSidebarCollapsed}
         />
 
-        <div className={`flex-1 min-h-0 flex flex-col ${hasConversation ? "overflow-y-auto" : "items-center justify-start pt-4 sm:justify-center overflow-y-auto sm:overflow-hidden"}`}>
+        <div className={`flex-1 min-h-0 flex flex-col ${hasConversation ? "overflow-y-auto" : "items-center justify-start pt-2 sm:justify-center overflow-y-auto sm:overflow-hidden"}`}>
           {hasConversation ? (
             <ChatThread messages={messages} isTyping={isTyping} />
           ) : (
@@ -68,7 +68,7 @@ export default function Home() {
           )}
         </div>
 
-        <div className="mx-auto w-full max-w-2xl space-y-1.5 sm:space-y-2 px-3 pb-3 sm:px-6 sm:pb-6 shrink-0 transition-all duration-300">
+        <div className="mx-auto w-full max-w-2xl space-y-1 px-3 pb-2 sm:px-6 sm:pb-6 shrink-0 transition-all duration-300">
           {!hasConversation && <QuickTopics onPick={(label) => sendMessage(`Help me with ${label.toLowerCase()}`)} />}
           {!hasConversation && <ProBanner />}
           <Composer value={draft} onChange={setDraft} onSend={() => sendMessage(draft)} />
