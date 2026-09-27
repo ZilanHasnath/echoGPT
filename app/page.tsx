@@ -47,16 +47,16 @@ export default function Home() {
 
   return (
     <div className="flex h-screen w-screen gap-2 overflow-hidden p-2 sm:p-3 box-border">
-      <Sidebar 
-        isOpen={isSidebarOpen} 
-        onClose={() => setIsSidebarOpen(false)} 
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
         isCollapsed={isSidebarCollapsed}
         onToggleCollapse={setIsSidebarCollapsed}
       />
 
       <main className="relative flex flex-1 flex-col h-full min-h-0 overflow-hidden rounded-2xl sm:rounded-3xl border border-line bg-gradient-to-b from-sky-soft via-white to-coral-soft/40 shadow-card">
-        <TopBar 
-          onOpenSidebar={() => setIsSidebarOpen(true)} 
+        <TopBar
+          onOpenSidebar={() => setIsSidebarOpen(true)}
           isSidebarCollapsed={isSidebarCollapsed}
         />
 
@@ -68,7 +68,7 @@ export default function Home() {
           )}
         </div>
 
-        <div className="mx-auto w-full max-w-2xl space-y-2 px-3 pb-4 sm:px-6 sm:pb-6 shrink-0 transition-all duration-300">
+        <div className="mx-auto w-full max-w-2xl space-y-2 px-3 pb-3 sm:px-6 sm:pb-6 shrink-0 transition-all duration-300">
           {!hasConversation && <QuickTopics onPick={(label) => sendMessage(`Help me with ${label.toLowerCase()}`)} />}
           {!hasConversation && <ProBanner />}
           <Composer value={draft} onChange={setDraft} onSend={() => sendMessage(draft)} />
