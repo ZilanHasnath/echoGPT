@@ -9,9 +9,12 @@ A modern, minimal Next.js & Tailwind CSS AI chat application built with mock cha
 * **Mock Chatting Data:** Fully structured frontend layout ready for interactive chat workflows.
 * **Modern Design:** Minimalistic, comment-free components using Lucide icons.
 
-## Quick Start
+## Install Process
 
 ```bash
+git clone https://github.com/ZilanHasnath/echoGPT.git
+cd echoGPT
+
 npm install
 npm run dev
 
