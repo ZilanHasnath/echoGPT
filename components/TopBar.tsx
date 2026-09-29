@@ -25,6 +25,8 @@ export default function TopBar({ onOpenSidebar, isSidebarCollapsed }: TopBarProp
         }`}>
           
           <div className="flex items-center gap-2.5 whitespace-nowrap">
+          <Image src="/logo.svg" alt="EchoGPT Logo" width={30} height={30} className="h-[30px] w-auto shrink-0" />
+
             <span className="font-display text-xl font-bold tracking-tight bg-gradient-to-r from-ink via-indigo-900 to-indigo-600 bg-clip-text text-transparent">
               EchoGPT
             </span>
